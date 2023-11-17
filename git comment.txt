@@ -1,0 +1,40 @@
+git checkout -b feature-newFunc
+git add mydiary/diary.txt
+git commit -m "Added diary entry for feature work"
+git add mydiary/diary.txt
+git commit -m "Added another diary entry for feature work"
+git rebase -i HEAD~2
+git checkout main
+git rebase feature-newFunc
+
+git checkout main
+git pull origin main
+git checkout experiment
+git log
+git checkout main
+git cherry-pick d58314c014e17c0f8091e4f715836e14815e443d
+git push origin main
+
+git checkout dev
+git log
+git revert 7e9812494f2c2df534060a71792962be4d5cbab8
+git revert 1a5d6d2f1f36d128e6b9a6a2236fdc0d1113638e
+git push origin dev
+
+git checkout main
+git add frontend/styles.css
+git commit -m "feat(frontend): style.css"
+git checkout feature-upload
+git diff main
+git checkout main
+git merge feature-upload
+vim frontend/styles.css
+git add frontend/styles.css
+git commit -m "feat(frontend): merge feature upload"
+
+git switch documentation
+git rebase -i HEAD~4
+git checkout main
+git merge documentation
+git push origin main
+
